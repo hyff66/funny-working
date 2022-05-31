@@ -1,0 +1,63 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cumulative from 1 after page loaded </title>
+
+    <style>
+        div {
+            text-align: center;
+            font-size: 100px;
+            padding: 100px;
+        }
+        
+        button {
+            display: block;
+            margin: 50px auto;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            color: rgb(83, 70, 70);
+            background-color: blanchedalmond;
+        }
+        
+        span {
+            color:rgb(105, 205, 124)
+        }
+    </style>
+
+</head>
+
+<body>
+    <button onclick="stop()">Timing start</button>
+    <div id="demo">
+
+    </div>
+
+    <script>
+        var flag = true;
+        var oBody = document.getElementById("demo");
+        var i = 0;
+        var myVar;
+        
+
+            function stop(){
+                if(flag){
+                    myVar=setInterval(updateNum,1000);
+                }
+                else{
+                    clearInterval(myVar);
+
+                    document.getElementById("demo").innerHTML="Time passed: " + "<span>" + j + "</span>" + " s";
+            }
+            flag=!flag;
+        }
+        function updateNum() {
+                j = i++;
+                document.getElementById("demo").innerHTML="Time passed: " + "<span>" + j + "</span>" + " s";
+            }
+        </script>
+</body>
+
+</html>
